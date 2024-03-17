@@ -1,7 +1,7 @@
 package unrn.export;
 
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.List;
 
 public class Export {
@@ -11,7 +11,7 @@ public class Export {
         this.users = users;
     }
 
-    public void export(FileWriter writer) throws IOException {
+    public void export(Writer writer) throws IOException {
         try {
             writer.write("username, email" + System.lineSeparator());
             for (User user : users) {
