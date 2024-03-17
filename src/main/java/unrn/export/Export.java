@@ -1,26 +1,24 @@
 package unrn.export;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 public class Export {
-    public void export() throws IOException {
-        var users = new Users().all();
-        File aFile = new File("/home/enrique/export-users.txt");
-        FileWriter writer = null;
+    private final List<User> users;
+
+    public Export(List<User> users) {
+        this.users = users;
+    }
+
+    public void export(FileWriter writer) throws IOException {
         try {
-            writer = new FileWriter(aFile);
             writer.write("username, email" + System.lineSeparator());
             for (User user : users) {
                 writer.write(user.userName() + "," + user.email() + System.lineSeparator());
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            if (writer != null) {
-                writer.close();
-            }
         }
     }
 }
