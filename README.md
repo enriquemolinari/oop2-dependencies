@@ -12,7 +12,13 @@
     - URL hardcodeada
     - Tipo de pago hardcodeado
     - ¿Cómo lo testeo sin cobrar de verdad?
-- Depender de Abstracciones
+    - Aplicamos inyección:
+        - Quick Fix: Movemos inicialización al constructor.
+        - Refactor: Introduce parameter (me cambia solito el setup del test)
+    - Aplicamos Depender de Abtracciones:
+        - Extract Interface sobre Paypal
+    - Mostramos como puedo hacer un *Fake* de PagoOnline
+        - Algo similar usando [Mockito](https://central.sonatype.com/artifact/org.mockito/mockito-core).
 - Desacoplar lógica de negocios de detalles técnicos
 - A que denominamos detalle técnico:
     - Acceso al disco (leer o escribir archivos)
