@@ -5,10 +5,11 @@ import java.util.List;
 
 public class Cajero {
     private List<Producto> productos;
-    private Paypal paypal = new Paypal("https://paypal.com/v1/cobrar");
+    private PagoOnline pagoOnline;
 
-    public Cajero(List<Producto> productos) {
+    public Cajero(List<Producto> productos, PagoOnline pagoOnline) {
         this.productos = productos;
+        this.pagoOnline = pagoOnline;
     }
 
     public double montoTotal() {
@@ -21,7 +22,7 @@ public class Cajero {
 
     public Ticket cobrar(TarjetaCredito tarjeta) {
         var total = this.montoTotal();
-        this.paypal.cobrar(total, tarjeta);
+        this.pagoOnline.cobrar(total, tarjeta);
         return new Ticket(LocalDateTime.now(), total);
     }
 }
