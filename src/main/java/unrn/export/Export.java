@@ -15,8 +15,6 @@ public class Export {
             for (User user : users) {
                 writer.write(user.userName() + "," + user.email() + System.lineSeparator());
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         } finally {
             if (writer != null) {
                 writer.close();
