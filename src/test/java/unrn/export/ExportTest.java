@@ -2,7 +2,6 @@ package unrn.export;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.List;
 
 public class ExportTest {
@@ -11,6 +10,17 @@ public class ExportTest {
         var users = new Users(listaDeUsuarios());
         users.export();
         //¿ assert ?
+//        assertEquals("""
+//                        username, email
+//                        user1,bla@email.com
+//                        user2,bla2@email.com
+//                        user3,bla3@email.com
+//                        user4,bla4@email.com
+//                        user5,bla5@email.com
+//                        user6,bla6@email.com
+//                        user7,bla7@email.com
+//                        """,
+//                ???);
     }
 
     private static List<User> listaDeUsuarios() {

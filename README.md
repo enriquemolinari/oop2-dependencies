@@ -11,8 +11,10 @@
 - Testing del modelo desacoplado de detalles técnicos
 - Ejemplo Export
     - Path al archivo hardcodeado
-    - Dependencia en Users hardcodeada
     - Dependencia en exportar a Archivo hardcodeada
+    - ¿Si quiero exportar a otro destino que no sea file?
+      - ¿ exportFile(), exportDb(), exportWeb(), etc ?
+      - Apliquemos Depender de Abstracciones e Inyección de Dependencias.
     - ¿Cómo testeo? Acoplado a todo esto. No es bueno.
         - No tengo buen control
         - Acceso a disco es lento
@@ -26,7 +28,6 @@
     - Aplicamos Depender de Abtracciones:
         - Extract Interface sobre Paypal
     - Mostramos como puedo hacer un *Fake* de PagoOnline
-        - Algo similar usando [Mockito](https://central.sonatype.com/artifact/org.mockito/mockito-core).
 
 - Sandy Metz about Minimalist Testing
     - https://www.youtube.com/watch?v=URSWYvyc42M
