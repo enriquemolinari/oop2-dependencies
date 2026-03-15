@@ -14,7 +14,7 @@ public class CambioMoneda {
     public double convertir(double montoAConvertir, Moneda monedaOrigen,
                                 Moneda monedaDestino) {
 
-        double valorDeCambio = obtenerValorDeCambio(monedaOrigen.codigo(), monedaDestino.codigo());
+        double valorDeCambio = valorDeCambio(monedaOrigen.codigo(), monedaDestino.codigo());
 
         double comision = calcularComision(montoAConvertir);
         double montoNeto = montoAConvertir - comision;
@@ -32,8 +32,8 @@ public class CambioMoneda {
         return monto * 0.05; // 5%
     }
 
-    private double obtenerValorDeCambio(String monedaBase,
-                                        String monedaDestino) {
+    private double valorDeCambio(String monedaBase,
+                                 String monedaDestino) {
         String url = apiUrl + monedaBase;
 
         try (HttpClient client = HttpClient.newHttpClient()) {
