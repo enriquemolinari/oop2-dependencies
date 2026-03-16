@@ -55,7 +55,7 @@ public class CambioMoneda {
 
     private double extraerValorDeCambio(String json, String moneda) {
         Gson gson = new Gson();
-        var data = gson.fromJson(json, ValorCambio.class);
+        var data = gson.fromJson(json, ValoresDeCambio.class);
         Double tasa = data.cambio(moneda);
         if (tasa != null) {
             return tasa;
