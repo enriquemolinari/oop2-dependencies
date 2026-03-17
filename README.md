@@ -9,15 +9,10 @@
     - Consumo de servicios Web
     - Enviar de emails, imprimir, etc.
 - Testing del modelo desacoplado de detalles técnicos
-- Ejemplo Export
-    - Path al archivo hardcodeado
-    - Dependencia en exportar a Archivo hardcodeada
-    - ¿Si quiero exportar a otro destino que no sea file?
-      - ¿ exportFile(), exportDb(), exportWeb(), etc ?
-      - Apliquemos Depender de Abstracciones e Inyección de Dependencias.
-    - ¿Cómo testeo? Acoplado a todo esto. No es bueno.
-        - No tengo buen control
-        - Acceso a disco es lento
+- Ejemplo Moneda
+    - URL hardcodeada
+    - Extraemos cuestiones técnicas a otra clase.
+    - Apliquemos Depender de Abstracciones e Inyección de Dependencias.
 - Ejemplo Pagos Online
     - URL hardcodeada
     - Tipo de pago hardcodeado
@@ -28,6 +23,15 @@
     - Aplicamos Depender de Abtracciones:
         - Extract Interface sobre Paypal
     - Mostramos como puedo hacer un *Fake* de PagoOnline
+- Ejemplo Export
+    - Path al archivo hardcodeado
+    - Dependencia en exportar a Archivo hardcodeada
+    - ¿Si quiero exportar a otro destino que no sea file?
+        - ¿ exportFile(), exportDb(), exportWeb(), etc ?
+        - Apliquemos Depender de Abstracciones e Inyección de Dependencias.
+    - ¿Cómo testeo? Acoplado a todo esto. No es bueno.
+        - No tengo buen control
+        - Acceso a disco es lento
 
 - Sandy Metz about Minimalist Testing
     - https://www.youtube.com/watch?v=URSWYvyc42M
