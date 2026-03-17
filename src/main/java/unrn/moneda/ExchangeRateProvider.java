@@ -29,7 +29,6 @@ public class ExchangeRateProvider implements RateProvider {
 
             String respuestaEnJson = response.body();
             return extraerValorDeCambio(respuestaEnJson, monedaDestino);
-
         } catch (Exception e) {
             throw new RuntimeException(
                     "Error al obtener tasa de cambio", e);

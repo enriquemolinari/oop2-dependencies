@@ -1,7 +1,7 @@
 # Técnicas de Desacoplamiento en Objetos
 
 - Inyección de Dependencias y Depender de Abstracciones
-- Desacoplar lógica de negocios de detalles técnicos
+- Separation of concerns: Desacoplar lógica de negocios de detalles técnicos
 - A que denominamos detalle técnico:
     - Acceso al disco (leer o escribir archivos)
     - Acceso al teclado
@@ -13,6 +13,12 @@
     - URL hardcodeada
     - Extraemos cuestiones técnicas a otra clase.
     - Apliquemos Depender de Abstracciones e Inyección de Dependencias.
+- Test Doubles
+    - Stub: Devuelve datos predefinidos para las pruebas.
+    - Mock: Verifica que ciertos métodos fueron llamados con ciertos parámetros.
+- Mock Server: https://www.mock-server.com/mock_server/running_mock_server.html#client_api
+- ¿Por qué no uso siempre Mock Server para todos los casos de Test?
+    - Principalmente porque son mas lentos
 - Ejemplo Pagos Online
     - URL hardcodeada
     - Tipo de pago hardcodeado
