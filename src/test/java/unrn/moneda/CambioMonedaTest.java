@@ -2,9 +2,20 @@ package unrn.moneda;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CambioMonedaTest {
+
+    @Test
+    public void fakesDeJdkHttpClient() {
+        var fakeHttpClient = new FakeHttpClient();
+        var conversor = new CambioMoneda(new ExchangeRateProvider("http://localhost/bla/usd", fakeHttpClient));
+        var monto = conversor.convertir(
+                100, Moneda.DOLAR, Moneda.PESO);
+
+        assertEquals(105450, monto, 0.01);
+
+    }
 
     @Test
     public void convertirMontoBajo() {

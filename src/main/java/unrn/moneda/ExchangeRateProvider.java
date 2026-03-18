@@ -9,9 +9,11 @@ import java.net.http.HttpResponse;
 
 public class ExchangeRateProvider implements RateProvider {
     private String apiUrl;
+    private HttpClient httpClient;
 
-    public ExchangeRateProvider(String apiUrl) {
+    public ExchangeRateProvider(String apiUrl, HttpClient httpClient) {
         this.apiUrl = apiUrl;
+        this.httpClient = httpClient;
     }
 
     @Override
@@ -19,12 +21,12 @@ public class ExchangeRateProvider implements RateProvider {
                                 String monedaDestino) {
         String url = apiUrl + monedaBase;
 
-        try (HttpClient client = HttpClient.newHttpClient()) {
+        try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
                     .build();
 
-            HttpResponse<String> response = client.send(
+            HttpResponse<String> response = this.httpClient.send(
                     request, HttpResponse.BodyHandlers.ofString());
 
             String respuestaEnJson = response.body();
