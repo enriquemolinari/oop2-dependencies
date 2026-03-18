@@ -13,7 +13,10 @@
     - URL hardcodeada
     - Extraemos cuestiones técnicas a otra clase.
     - Apliquemos Depender de Abstracciones e Inyección de Dependencias.
-- Test Doubles
+- Test Doubles (Libro XUnit Test Patters)
+    - Objeto que se utiliza en lugar de un objeto real para propósitos de prueba.
+    - **Importante**: "We need to be careful that we don’t replace the parts of the SUT that we are trying to verify
+      because that practice can result in tests that test the wrong software!" (XUnit Test Patters).
     - Stub: Devuelve datos predefinidos para las pruebas.
     - Mock: Verifica que ciertos métodos fueron llamados con ciertos parámetros.
 - Mock Server: https://www.mock-server.com/mock_server/running_mock_server.html#client_api
