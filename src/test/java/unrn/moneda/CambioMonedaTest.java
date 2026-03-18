@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CambioMonedaTest {
 
+    //Testeo con la clase Real, pero hago un test double de HttpClient y HttpResponse
     @Test
     public void fakesDeJdkHttpClient() {
         var fakeHttpClient = new FakeHttpClient();
@@ -17,6 +18,7 @@ public class CambioMonedaTest {
 
     }
 
+    //Testeo con la clase una implementacion Fake del Rate Provider
     @Test
     public void convertirMontoBajo() {
         var conversor = new CambioMoneda(new FakeRateProvider());
